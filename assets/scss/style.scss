@@ -1,0 +1,123 @@
+
+$border: 3px solid black;
+$flex: flex;
+$color: darkblue;
+$new-color: white;
+
+@mixin center-text {
+  width: 100%;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#container {
+  @include center-text;
+  border: $border;
+  background-color: darkseagreen;
+  margin: 5% auto auto;
+  display: $flex;
+  flex-direction: column;
+  align-items: center;
+
+    #result {
+      position: absolute;
+      display: $flex;
+      justify-content: center;
+      align-items: center;
+      border: $border;
+      background: lighten(gainsboro, 10%);
+      //opacity: 0.5;
+      width: 27%;
+      height: 5rem;
+    }
+
+    #calculator {
+      margin-top: 7rem;
+
+      button {
+        width: 3rem;
+        text-align: center;
+        font-weight: bold;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+
+        &:hover {
+          background: $color;
+          color: $new-color;
+          font-weight: bold;
+        }
+
+        &::before {
+          background: lighten(purple,25%);
+          color: $new-color;
+          font-weight: bold;
+        }
+      }
+
+    }
+
+    #other {
+      margin: 1rem;
+      font-weight: bold;
+      text-align: center;
+
+      button {
+        width: 5rem;
+        padding: 3px;
+
+        &:hover {
+          background: $color;
+          color: $new-color;
+          font-weight: bold;
+        }
+
+        &::before {
+          background: lighten(purple,25%);
+          color: $new-color;
+          font-weight: bold;
+        }
+
+      }
+
+    }
+
+    /*.tooltip {
+      visibility: hidden;
+    } */
+
+    #delete:hover {
+      background: $color;
+      color: $new-color;
+      font-weight: bold;
+
+     /* .tooltip {
+        visibility: visible;
+        background: black;
+        color: white;
+        padding: 3px;
+        font-weight: bold;
+        text-align: center;
+      } */
+
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
