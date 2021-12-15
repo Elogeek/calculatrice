@@ -1,8 +1,12 @@
 
 $border: 3px solid black;
+$box : -1px 1px 0 4px #000000;
 $flex: flex;
 $color: darkblue;
 $new-color: white;
+$red: 0;
+$blue: 184;
+$green: 174;
 
 @mixin center-text {
   width: 100%;
@@ -34,26 +38,44 @@ html {
       justify-content: center;
       align-items: center;
       border: $border;
-      background: lighten(gainsboro, 10%);
-      //opacity: 0.5;
+      background: #738A87;
       width: 27%;
-      height: 5rem;
+      height: 6rem;
+      margin-top: 7px;
+      padding: 10px 20px;
+
+      &:hover {
+        box-shadow: $box;
+      }
+
+      span {
+        background: #AAABA2;
+        border-radius: 10px;
+        font-size: 30px;
+        padding: 0 8px;
+        text-align: right;
+        flex: 1;
+      }
+
     }
 
     #calculator {
       margin-top: 7rem;
 
       button {
-        width: 3rem;
+        background: #AAABA2;
+        width: 6rem;
         text-align: center;
-        font-weight: bold;
+        font-weight: normal;
         padding: 0.5rem;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
 
         &:hover {
-          background: $color;
+          background: adjust-color($color, $red:0, $green:174, $blue:184);
           color: $new-color;
           font-weight: bold;
+          box-shadow: $box;
         }
 
         &::before {
@@ -71,13 +93,16 @@ html {
       text-align: center;
 
       button {
-        width: 5rem;
+        background: #AAABA2;
+        width: 6rem;
         padding: 3px;
+        margin-left: 1rem;
 
         &:hover {
-          background: $color;
+          background: adjust-color($color, $red:0, $green:174, $blue:184);
           color: $new-color;
           font-weight: bold;
+          box-shadow: $box;
         }
 
         &::before {
@@ -90,23 +115,10 @@ html {
 
     }
 
-    /*.tooltip {
-      visibility: hidden;
-    } */
-
     #delete:hover {
-      background: $color;
+      background: adjust-color($color, $red:0, $green:174, $blue:184);
       color: $new-color;
       font-weight: bold;
-
-     /* .tooltip {
-        visibility: visible;
-        background: black;
-        color: white;
-        padding: 3px;
-        font-weight: bold;
-        text-align: center;
-      } */
 
     }
 

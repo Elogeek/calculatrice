@@ -5,6 +5,7 @@ for(let but of buttons) {
     //delete space
     but.addEventListener('click', function () {
 
+        console.log("hello")
     })
 }
 
