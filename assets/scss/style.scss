@@ -7,10 +7,30 @@ $new-color: white;
 $red: 0;
 $blue: 184;
 $green: 174;
+$w: 27rem;
 
+
+// Align text center
 @mixin center-text {
   width: 100%;
   text-align: center;
+}
+
+// For little screen
+@mixin rezise {
+
+  #container {
+
+    #result {
+      width: 27rem;
+    }
+
+    button {
+      max-width: 5rem;
+    }
+
+  }
+
 }
 
 * {
@@ -39,7 +59,7 @@ html {
       align-items: center;
       border: $border;
       background: #738A87;
-      width: 27%;
+      width: $w;
       height: 6rem;
       margin-top: 7px;
       padding: 10px 20px;
@@ -119,6 +139,50 @@ html {
       background: adjust-color($color, $red:0, $green:174, $blue:184);
       color: $new-color;
       font-weight: bold;
+    }
+
+    // Responsive mode
+    @media screen and (max-width: 1000px) {
+      @include rezise
+    }
+
+    @media screen and (max-width: 348px) {
+      @include rezise
+    }
+
+    @media screen and (max-width: 294px){
+
+        #result {
+          width: 24rem;
+        }
+
+        button {
+          max-width: 5rem;
+        }
+
+    }
+
+    @media screen and (max-width: 245px){
+
+        #result {
+          width: 22rem;
+        }
+
+        button {
+          max-width: 4.6rem;
+        }
+
+    }
+
+    @media screen and (max-width: 225px){
+
+      #result {
+        width: 20rem;
+      }
+
+      button {
+        max-width: 4rem;
+      }
 
     }
 
