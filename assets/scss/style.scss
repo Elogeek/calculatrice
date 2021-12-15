@@ -1,6 +1,6 @@
 
 $border: 3px solid black;
-$box : -1px 1px 0 4px #000000;
+$box : -1px 1px 0 4px black;
 $flex: flex;
 $color: darkblue;
 $new-color: white;
@@ -12,7 +12,7 @@ $w: 27rem;
 
 // Align text center
 @mixin center-text {
-  width: 100%;
+  max-width: 38rem;
   text-align: center;
 }
 
@@ -55,26 +55,18 @@ html {
     #result {
       position: absolute;
       display: $flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: left;
+      align-items: flex-start;
+      padding: 1rem;
       border: $border;
-      background: #738A87;
+      background: transparentize(gainsboro,0.3);
       width: $w;
       height: 6rem;
       margin-top: 7px;
-      padding: 10px 20px;
+      font-size: 2.5rem;
 
       &:hover {
         box-shadow: $box;
-      }
-
-      span {
-        background: #AAABA2;
-        border-radius: 10px;
-        font-size: 30px;
-        padding: 0 8px;
-        text-align: right;
-        flex: 1;
       }
 
     }
@@ -83,7 +75,7 @@ html {
       margin-top: 7rem;
 
       button {
-        background: #AAABA2;
+        background: gainsboro;
         width: 6rem;
         text-align: center;
         font-weight: normal;
@@ -99,7 +91,7 @@ html {
         }
 
         &::before {
-          background: lighten(purple,25%);
+          background: lighten(purple,15%);
           color: $new-color;
           font-weight: bold;
         }
@@ -113,7 +105,7 @@ html {
       text-align: center;
 
       button {
-        background: #AAABA2;
+        background: gainsboro;
         width: 6rem;
         padding: 3px;
         margin-left: 1rem;
@@ -142,48 +134,36 @@ html {
     }
 
     // Responsive mode
-    @media screen and (max-width: 1000px) {
-      @include rezise
-    }
+    @media screen and (max-width: 300px) {
+      #container {
+        width: 100%;
 
-    @media screen and (max-width: 348px) {
-      @include rezise
-    }
-
-    @media screen and (max-width: 294px){
-
-        #result {
-          width: 24rem;
+        input {
+          max-width: 22rem;
         }
 
         button {
           max-width: 5rem;
         }
-
+      }
     }
 
-    @media screen and (max-width: 245px){
+    @media screen and (max-width: 200px) {
+      #container {
+        width: 100%;
 
-        #result {
-          width: 22rem;
+        input {
+          max-width: 17rem;
         }
 
         button {
-          max-width: 4.6rem;
+          max-width: 3.5rem;
         }
 
+        #delete {
+          max-width: 4.6rem;
+      }
     }
-
-    @media screen and (max-width: 225px){
-
-      #result {
-        width: 20rem;
-      }
-
-      button {
-        max-width: 4rem;
-      }
-
     }
 
   }
