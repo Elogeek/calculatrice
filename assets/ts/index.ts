@@ -1,14 +1,23 @@
 let result = document.querySelector("#result") as HTMLInputElement;
-const buttons = document.querySelectorAll('#calculator :not(#delete, #equal)');
+let buttons = document.querySelectorAll('button') as unknown as HTMLElement;
+
+let buttonsId: any[] = [
+    "case-number-one", "case-number-two", "case-number-three", "case-number-four", "case-number-five",
+    "case-number-six", "case-number-seven", "case-number-height", "case-number-nine", "case-number-null",
+    "more", "less", "multiply", "parenthesize", "parenthesize2", "modulo", "divide", "point", "delete",
+    "equal", "reset"
+]
 
 type Operator = "+" | "-" | "*"| "/" | "%";
 
 // display the calcul of the #result
-
+// @ts-ignore
 for(const btn of buttons) {
     // @ts-ignore
-    btn.addEventListener('click', e => result.innerHTML += e.target.innerText.trim());
-        console.log("on m'a touché");
+    btn.addEventListener('click', function(evt) {
+        // console.log(buttonsId.length); //ok
+      return result.innerText;
+    });
 }
 
 /**
@@ -17,16 +26,27 @@ for(const btn of buttons) {
 const reset = document.getElementById("reset") as HTMLButtonElement;
 reset.addEventListener("click", e => result.innerText = " ")
 
+//const equal = document.getElementById("equal") as HTMLButtonElement;
+//equal.addEventListener("click",ev => {
+  //  return result.innerHTML;
+//});
+
+const deleteCalcul = document.getElementById("delete") as HTMLButtonElement;
+deleteCalcul.addEventListener("click",ev => result.innerText = " 0 ");
 
 
 // check que les numbers soit des numbers et qu'il y a bien un operator
 function check(): void {
-    //const numberO: number;
-    //const secondN: number;
-    //if(result === numberO && Operator && secondN) {
 
-    //}
+    let numberO: any;
+    let secondN: any;
+
+   // if(result === (isNumber("numberO") && Operator && isNumber("secondN"))) {
+       // result.innerText = calculate(numberO,operator, secondN);
+  //  }
+
 }
+
 
 // Check if number and transform in number if not a number
 function isNumber(str: string) : boolean {

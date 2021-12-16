@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./build/css/style.css">
-    <title>Title</title>
+    <title>Calculator</title>
 </head>
 <body>
 
-<div id="container">
-    <input id="result">
     <div id="calculator">
+
+        <h2>Calculator with typescript</h2>
+        <label for="result"></label>
+        <input id="result">
+
         <!--my calculator buttons-->
         <div>
             <button class="case-number">1</button>
@@ -33,9 +36,9 @@
         </div>
 
         <div>
-            <button class="case-other" id="parenthese">(</button>
+            <button class="case-other" id="parenthesize">(</button>
             <button class="case-number">0</button>
-            <button class="case-other" id="parenthese2">)</button>
+            <button class="case-other" id="parenthesize2">)</button>
             <button class="case-operator" id="modulo">%</button>
         </div>
 
@@ -45,14 +48,13 @@
             <button class="case-other" id="point">.</button>
             <button class="case-operator" id="delete"> Delete</button>
         </div>
+        <div id="other">
+            <button id="equal">=</button>
+            <button class="case-operator" id="reset">Clear</button>
+        </div>
+
     </div>
 
-    <div id="other">
-        <button id="equal">=</button>
-        <button class="case-operator" id="reset">Clear</button>
-
-    </div>
-</div>
 <script src="./assets/js/index.js"></script>
 </body>
 </html>
