@@ -1,13 +1,6 @@
 let result = document.querySelector("#result") as HTMLInputElement;
 let buttons = document.querySelectorAll('button') as unknown as HTMLElement;
 
-let buttonsId: any[] = [
-    "case-number-one", "case-number-two", "case-number-three", "case-number-four", "case-number-five",
-    "case-number-six", "case-number-seven", "case-number-height", "case-number-nine", "case-number-null",
-    "more", "less", "multiply", "parenthesize", "parenthesize2", "modulo", "divide", "point", "delete",
-    "equal", "reset"
-]
-
 type Operator = "+" | "-" | "*"| "/" | "%";
 
 // display the calcul of the #result
