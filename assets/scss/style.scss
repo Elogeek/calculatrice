@@ -20,7 +20,7 @@
   $back-color: #4CB2D4;
   $btn-color: #F3A530;
   $text-color: #fefefe;
-  $text-color-result: #202020;
+  $text-color-result:#00004B;
 
   :host {
     display: flex;
@@ -71,7 +71,6 @@
 
   }
 
-
   h2 {
     display: flex;
     flex-direction: row;
@@ -100,34 +99,33 @@
       @include templateButton;
     }
 
-    #result {
+    .result {
       display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
+      align-items: flex-end;
+      justify-content: space-around;
+      flex-direction: column;
+      word-wrap: break-word;
+      word-break: break-all;
       height: 60px;
       width: 28rem;
       padding: 2px 11px;
       margin: 8px 0 13px;
-      font-size: 1.9em;
+      font-size: 1.5em;
       box-shadow: inset -2px -1px 0 rgba(0,0,0,.2);
       font-weight: bold;
       border: 1px solid rgba(0,0,0,.2);
       border-radius: 8px;
       background-color: $color-back-result;
       color: $text-color-result;
-    }
-
-    #delete {
-      width: 12rem;
+      letter-spacing: 0.3rem;
     }
 
     #equal {
-      width: 17rem;
+      width: 12rem;
     }
 
     #reset {
-      width: 7rem;
+      width: 12rem;
     }
 
   }

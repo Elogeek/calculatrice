@@ -5,7 +5,7 @@ module.exports = (env, argv) => {
     const config = argv.mode === 'development' ? devConfig() : prodConfig();
     return {
         entry: {
-            front: "./assets/index.ts",
+            front: "./assets/ts/index.ts",
         },
 
         output: {

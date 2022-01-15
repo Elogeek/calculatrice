@@ -1,44 +1,29 @@
-let result = document.querySelector("#result") as HTMLInputElement;
-let buttons = document.querySelectorAll('button') as unknown as HTMLElement;
+let result = document.querySelector(".result") as HTMLDivElement;
+let buttons = document.querySelectorAll("button") as unknown as HTMLElement;
 
-type Operator = "+" | "-" | "*"| "/" | "%";
-
-// display the calcul of the #result
 // @ts-ignore
-for(const btn of buttons) {
+for(let button of buttons) {
     // @ts-ignore
-    btn.addEventListener('click', function(evt) {
-        // console.log(buttonsId.length); //ok
-      return result.innerText;
-    });
+    button.addEventListener('click', e => result.innerHTML += e.target.innerText.trim());
+    console.log(button + "on a clické sur moi");
 }
 
+
+type Operator = "+" | "-" | "*"| "/" ;
+
 /**
- * Click calculator buttons
+ * Special calculator button clicks
  */
 const reset = document.getElementById("reset") as HTMLButtonElement;
 reset.addEventListener("click", e => result.innerText = " ")
 
-//const equal = document.getElementById("equal") as HTMLButtonElement;
-//equal.addEventListener("click",ev => {
-  //  return result.innerHTML;
-//});
+const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
+deleteBtn.addEventListener("click", ev => {
+    result.innerText = result.innerHTML.slice(0, result.innerHTML.length - 1)
+});
 
-const deleteCalcul = document.getElementById("delete") as HTMLButtonElement;
-deleteCalcul.addEventListener("click",ev => result.innerText = " 0 ");
-
-
-// check que les numbers soit des numbers et qu'il y a bien un operator
-function check(): void {
-
-    let numberO: any;
-    let secondN: any;
-
-   // if(result === (isNumber("numberO") && Operator && isNumber("secondN"))) {
-       // result.innerText = calculate(numberO,operator, secondN);
-  //  }
-
-}
+const equal = document.querySelector("#equal") as HTMLButtonElement;
+equal.addEventListener("click", ev => result.innerHTML = eval(result.innerHTML));
 
 
 // Check if number and transform in number if not a number
@@ -65,16 +50,13 @@ function isOperator(operator: string) :boolean {
         case "/":
             document.getElementById("divide") as HTMLButtonElement;
             break;
-        case "%":
-            document.getElementById("modulo") as HTMLButtonElement;
-            return true;
         default:
             return false;
     }
 }
 
-// Calculate
-function calculate(x: number, operator: Operator, y: number) : number | undefined {
+// Compute
+function compute(x: number, operator: Operator, y: number) : number | undefined {
 
     switch (operator) {
 
@@ -94,12 +76,11 @@ function calculate(x: number, operator: Operator, y: number) : number | undefine
             result.innerHTML = String(x / y);
             return x / y;
             break;
-        case "%":
-            result.innerHTML = String(x % y);
-            return x % y;
-            break;
         default:
             break;
     }
 }
+
+
+
 
