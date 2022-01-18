@@ -1,13 +1,13 @@
-let result = document.querySelector(".result") as HTMLDivElement;
-let buttons = document.querySelectorAll("button") as unknown as HTMLElement;
+let result = document.querySelector(".result") as HTMLElement;
+const buttons = document.querySelectorAll("button") as NodeListOf<Element>;
 
+// Action touch buttons
 // @ts-ignore
 for(let button of buttons) {
     // @ts-ignore
-    button.addEventListener('click', e => result.innerHTML += e.target.innerText.trim());
+    button.addEventListener('click', e => result.innerHTML );
     console.log(button + "on a clické sur moi");
 }
-
 
 type Operator = "+" | "-" | "*"| "/" ;
 
@@ -32,7 +32,7 @@ function isNumber(str: string) : boolean {
     return !isNaN(a);
 }
 
-// Operators
+// Check is operator in the calc
 // @ts-ignore
 function isOperator(operator: string) :boolean {
 
@@ -55,7 +55,7 @@ function isOperator(operator: string) :boolean {
     }
 }
 
-// Compute
+// Return compute (result of the calc)
 function compute(x: number, operator: Operator, y: number) : number | undefined {
 
     switch (operator) {
@@ -77,7 +77,7 @@ function compute(x: number, operator: Operator, y: number) : number | undefined 
             return x / y;
             break;
         default:
-            break;
+           return 0;
     }
 }
 
