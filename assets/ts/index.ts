@@ -1,12 +1,12 @@
 let result = document.querySelector(".result") as HTMLElement;
 const buttons = document.querySelectorAll("button") as NodeListOf<Element>;
 
+let i: boolean = true;
+
 // Action touch buttons
-// @ts-ignore
-for(let button of buttons) {
-    // @ts-ignore
-    button.addEventListener('click', e => result.innerHTML );
-    console.log(button + "on a clické sur moi");
+function actionBtn() {
+    buttons.addEventListener("click", e)
+    console.log("tadamm");
 }
 
 type Operator = "+" | "-" | "*"| "/" ;
@@ -56,30 +56,26 @@ function isOperator(operator: string) :boolean {
 }
 
 // Return compute (result of the calc)
-function compute(x: number, operator: Operator, y: number) : number | undefined {
+function compute(numberA: number, operator: Operator, numberB: number) : number | undefined {
 
     switch (operator) {
 
         case "+":
-            result.innerHTML = String(x + y);
-            return x + y;
-            break;
+            result.innerHTML = String(numberA + numberB);
+            return numberA + numberB;
         case "-":
-            result.innerHTML = String(x - y);
-            return x - y;
-            break;
+            result.innerHTML = String(numberA - numberB);
+            return numberA - numberB;
         case "*":
-            result.innerHTML = String(x * y);
-            return x * y;
-            break;
+            result.innerHTML = String(numberA * numberB);
+            return numberA * numberB;
         case "/":
-            result.innerHTML = String(x / y);
-            return x / y;
-            break;
+            result.innerHTML = String( numberA / numberB);
+            return numberA / numberB;
         default:
            return 0;
     }
-}
+}}
 
 
 
