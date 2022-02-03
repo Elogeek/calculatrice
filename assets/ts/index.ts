@@ -5,7 +5,10 @@ let i: boolean = true;
 
 // Action touch buttons
 function actionBtn() {
-    buttons.addEventListener("click", e)
+    // @ts-ignore
+    buttons.addEventListener("click", function () {
+        console.log("tadamm");
+    })
     console.log("tadamm");
 }
 
@@ -75,7 +78,7 @@ function compute(numberA: number, operator: Operator, numberB: number) : number 
         default:
            return 0;
     }
-}}
+}
 
 
 
