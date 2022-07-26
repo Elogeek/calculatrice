@@ -7,45 +7,68 @@
 </head>
 <body>
 
-    <div id="calculator">
-        <h2>Calculator with typescript</h2>
-        <div class="result"></div>
-        <!--my calculator buttons-->
-        <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button id="more">+</button>
+<div class="calculator">
+
+    <div class="output"></div>
+
+    <div class="calc-wrap">
+
+        <div class="left">
+
+            <div class="row">
+                <button class="button" id="delete" value="delete">Delete</button>
+            </div>
+
+            <div class="row">
+
+                <button class="button" value="7">7</button>
+                <button class="button" value="8">8</button>
+                <button class="button" value="9">9</button>
+
+            </div>
+
+            <div class="row">
+
+                <button class="button" value="4">4</button>
+                <button class="button" value="5">5</button>
+                <button class="button" value="6">6</button>
+
+            </div>
+
+            <div class="row">
+
+                <button class="button" value="1">1</button>
+                <button class="button" value="2">2</button>
+                <button class="button" value="3">3</button>
+
+            </div>
+
+            <div class="row">
+                <button value="" class="button" id="clear">Clear</button>
+                <button class="button" value="0">0</button>
+
+            </div>
+
         </div>
 
-        <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button id="less">-</button>
-        </div>
+        <div class="right">
 
-        <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button id="multiply">*</button>
-        </div>
+            <button value="/" class="button">/</button>
 
-        <div>
-            <button>0</button>
-            <!-- the virgule-->
-            <button id="point">.</button>
-            <button id="delete"> Del</button>
-            <button id="divide">/</button>
-        </div>
-        <div id="other">
-            <button id="equal">=</button>
-            <button id="reset">Clear</button>
+            <button value="*" class="button">x</button>
+
+            <button value="-" class="button">-</button>
+
+            <button value="+" class="button">+</button>
+
+            <button class="button" id="equals">=</button>
+
         </div>
 
     </div>
 
-<script src="./assets/js/index.js"></script>
+</div>
+
+<script src="./build/js/front.js"></script>
 </body>
 </html>

@@ -5,137 +5,108 @@
     padding: 0;
   }
 
-  html {
-    font-size: 62.5%;
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.calculator {
+  background-color: #00E5FF;
+  border-radius: 7px;
+  width: 450px;
+  margin: 7rem auto 0;
+}
+
+.output {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 40px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  background-color: #FAFAFA;
+  padding: 25px 20px;
+  height: 109px;
+  text-align: right;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  overflow: hidden;
+}
+
+.calc-wrap {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: flex;
+  justify-content: space-between;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  position: relative;
+  background-color: #303a46;
+  border: none;
+  font-size: 1.5em;
+  color: #FFFFFF;
+  width: 100%;
+  height: 100px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button:after {
+  content: "";
+  background: white;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.right button {
+  background-color: #00b9d7;
+}
+
+.left #clear, #delete {
+  background-color: turquoise;
+}
+
+.right button:last-child {
+  border-bottom-right-radius: 7px;
+}
+
+.button-decimal {
+  border-bottom-left-radius: 7px;
+}
+
+@media only screen and  (max-width: 540px){
+  .calculator {
+    width: 300px;
   }
-
-  body {
-    width: 100%;
-    font-size: 2rem;
-    margin-top: 5rem;
-  }
-
-  /* colors of the calculator */
-  $color-back-result: #f3f3f3;
-  $back-color: #4CB2D4;
-  $btn-color: #F3A530;
-  $text-color: #fefefe;
-  $text-color-result:#00004B;
-
-  :host {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    height: 100%;
-  }
-
-  /* Align text center */
-  @mixin center-text {
-    text-align: center;
-  }
-
-  /* For little screen */
-  @mixin rezise { }
-
-  /* rules for design the buttons of the calculator */
-  @mixin templateButton {
-    margin-left: 7px;
-    margin-top: 7px;
-    font-weight: bold;
-    border-radius: 14px;
-    border-style: none;
-    text-decoration: none;
-    width: 3.9em;
-    height: 50px;
-    cursor: pointer;
-    background-color: $btn-color;
-    color: $text-color;
-    box-shadow: 1px 2px rgba(0, 0, 0, 0.4);
-
-    &:hover {
-      background-color: darken($btn-color, 10%);
-    }
-
-    &:active {
-      background-color: lighten($btn-color, 15);
-      box-shadow: 0 0 rgba(0, 0, 0, 0.4);
-      transform: translateY(5px);
-      outline: none;
-    }
-
-    &:focus {
-      outline: none;
-      background-color: $btn-color;
-    }
-
-  }
-
-  h2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-content: center;
-    padding: 4px;
-    font-size: 1.1rem;
-    letter-spacing: 0.2rem;
-    font-weight: bold;
-    color: $text-color;
-    text-transform: uppercase;
-    margin-left: 0.5rem;
-  }
-
-  #calculator {
-    @include center-text;
-    max-width: 315px;
-    margin: 0 auto;
-    padding: 15px 15px;
-    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    background-color: $back-color;
-
-    button {
-      @include templateButton;
-    }
-
-    .result {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-around;
-      flex-direction: column;
-      word-wrap: break-word;
-      word-break: break-all;
-      height: 60px;
-      width: 28rem;
-      padding: 2px 11px;
-      margin: 8px 0 13px;
-      font-size: 1.5em;
-      box-shadow: inset -2px -1px 0 rgba(0,0,0,.2);
-      font-weight: bold;
-      border: 1px solid rgba(0,0,0,.2);
-      border-radius: 8px;
-      background-color: $color-back-result;
-      color: $text-color-result;
-      letter-spacing: 0.3rem;
-    }
-
-    #equal {
-      width: 12rem;
-    }
-
-    #reset {
-      width: 12rem;
-    }
-
-  }
-
-
-
-
-
-
-
-
-
-
+}

@@ -1,85 +1,82 @@
-let result = document.querySelector(".result") as HTMLElement;
-const buttons = document.querySelectorAll("button") as NodeListOf<Element>;
+const buttons = document.querySelectorAll(".button") as NodeListOf<Element>;
+const output = document.querySelector(".output") as HTMLElement;
 
-let i: boolean = true;
+// Search btn
+const reset = document.getElementById("clear") as HTMLButtonElement;
+const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
+const equal = document.getElementById("equals") as HTMLButtonElement;
 
-// Action touch buttons
-function actionBtn() {
+let i: number = 0;
+
+const arrayButtons: number = buttons.length;
+console.log(arrayButtons); // it's correct
+
+for(i = 0; i <arrayButtons; i++) {
     // @ts-ignore
-    buttons.addEventListener("click", function () {
-        console.log("tadamm");
-    })
-    console.log("tadamm");
+    buttons[i].addEventListener("click", compute);
+    //console.log(buttons[i]); it's correct
 }
 
 type Operator = "+" | "-" | "*"| "/" ;
 
 /**
- * Special calculator button clicks
+ * Action touch buttons
  */
-const reset = document.getElementById("reset") as HTMLButtonElement;
-reset.addEventListener("click", e => result.innerText = " ")
+function actionBtn(): void {
+    const allButton: NodeListOf<Element> = document.querySelectorAll(".button");
 
-const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
-deleteBtn.addEventListener("click", ev => {
-    result.innerText = result.innerHTML.slice(0, result.innerHTML.length - 1)
-});
+    allButton.forEach(function (e:Element):void {
 
-const equal = document.querySelector("#equal") as HTMLButtonElement;
-equal.addEventListener("click", ev => result.innerHTML = eval(result.innerHTML));
+        e.addEventListener("click", function ():void {
+            console.log(e.innerHTML);
+            output.innerHTML = e.innerHTML;
 
+            // Special calculator button clicks
+            if(e.innerHTML === "clear") {
+                reset.addEventListener("click", e => output.innerText = " ")
+            }
+            if(e.innerHTML === "delete") {
+                deleteBtn.addEventListener("click", ev => {
+                    output.innerText = output.innerHTML.slice(0, output.innerHTML.length - 1)
+                });
+            }
+            // @ts-ignore
+            if(e.innerHTML === "=") {
+                equal.addEventListener("click", ev => {
+                        output.innerHTML = eval(output.innerHTML)
+                }
+            )}
+        })
 
-// Check if number and transform in number if not a number
-function isNumber(str: string) : boolean {
-    const a = parseInt(str);
-    return !isNaN(a);
+    })
+
 }
 
-// Check is operator in the calc
-// @ts-ignore
-function isOperator(operator: string) :boolean {
-
-    switch (operator) {
-
-        case "+":
-            document.getElementById("more") as HTMLButtonElement;
-            break;
-        case "-":
-            document.getElementById("less") as HTMLButtonElement;
-            break;
-        case "*":
-            document.getElementById("multiply") as HTMLButtonElement;
-            break;
-        case "/":
-            document.getElementById("divide") as HTMLButtonElement;
-            break;
-        default:
-            return false;
-    }
-}
-
-// Return compute (result of the calc)
+/**
+ * Return compute (result of the calc)
+ * @param numberA
+ * @param operator
+ * @param numberB
+ */
 function compute(numberA: number, operator: Operator, numberB: number) : number | undefined {
 
     switch (operator) {
 
         case "+":
-            result.innerHTML = String(numberA + numberB);
+            output.innerHTML = String(numberA + numberB);
             return numberA + numberB;
         case "-":
-            result.innerHTML = String(numberA - numberB);
+            output.innerHTML = String(numberA - numberB);
             return numberA - numberB;
         case "*":
-            result.innerHTML = String(numberA * numberB);
+            output.innerHTML = String(numberA * numberB);
             return numberA * numberB;
         case "/":
-            result.innerHTML = String( numberA / numberB);
+            output.innerHTML = String( numberA / numberB);
             return numberA / numberB;
         default:
-           return 0;
+            return 0;
     }
 }
 
-
-
-
+actionBtn();
