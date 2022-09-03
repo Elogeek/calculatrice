@@ -62,7 +62,7 @@ function devConfig() {
                 watch: true,
             },
             compress: true,
-            port: 9000,
+            port: 8000,
             hot: true,
             open: true,
         },
@@ -94,6 +94,11 @@ function prodConfig() {
                     type: 'asset/resource',
                     generator: {filename: 'build/images/[name][ext]'}
                 }, */
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                },
                 {
                     test: /\.(m)js$/,
                     loader: 'babel-loader',

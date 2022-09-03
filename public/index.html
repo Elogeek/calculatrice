@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="build/js/assets/ts/index.js" defer></script>
     <link rel="stylesheet" href="./build/css/style.css">
     <title>Calculator</title>
 </head>
 <body>
+
+<h2>My calculator in typescript !</h2>
 
 <div class="calculator">
 
@@ -16,7 +20,7 @@
         <div class="left">
 
             <div class="row">
-                <button class="button" id="delete" value="delete">Delete</button>
+                <button class="button" value="delete" id="delete">Delete</button>
             </div>
 
             <div class="row">
@@ -44,7 +48,7 @@
             </div>
 
             <div class="row">
-                <button value="" class="button" id="clear">Clear</button>
+                <button value="Clear" class="button" id="clear">Clear</button>
                 <button class="button" value="0">0</button>
                 <button class="button" value=".">.</button>
 
@@ -56,13 +60,13 @@
 
             <button value="/" class="button">/</button>
 
-            <button value="*" class="button">x</button>
+            <button value="*" class="button">*</button>
 
             <button value="-" class="button">-</button>
 
             <button value="+" class="button">+</button>
 
-            <button class="button" id="equals">=</button>
+            <button class="button" value="=" id="equals">=</button>
 
         </div>
 
@@ -70,6 +74,5 @@
 
 </div>
 
-<script src="./build/js/front.js"></script>
 </body>
 </html>
