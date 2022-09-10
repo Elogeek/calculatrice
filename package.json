@@ -9,7 +9,6 @@
     "watch:prod": "webpack --watch --mode=production",
     "watch:dev": "webpack --watch --mode=development",
     "start:server": "webpack serve --mode development",
-    "start:tests": "jasmine-browser-runner serve",
     "sass:dev": "sass assets/scss:public/build/css",
     "sass:prod": "sass --no-source-map assets/scss:public/build/css",
     "sass:watch": "sass --watch assets/scss:public/build/css",
