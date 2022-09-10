@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "ts-node node_modules/jasmine/bin/jasmine"
+  },
+  "spec_dir": "assets/ts",
+  "spec_files": ["**/*[sS]pec.ts"],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}

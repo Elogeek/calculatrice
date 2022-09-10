@@ -13,7 +13,8 @@
     "sass:prod": "sass --no-source-map assets/scss:public/build/css",
     "sass:watch": "sass --watch assets/scss:public/build/css",
     "build:ts": "tsc",
-    "watch:ts": "tsc --watch"
+    "watch:ts": "tsc --watch",
+    "test": "ts-node node_modules/jasmine/bin/jasmine"
   },
   "keywords": [],
   "author": "",
@@ -29,9 +30,11 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@types/jasmine": "^4.3.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.3.1",
+    "jasmine": "^4.4.0",
     "mini-css-extract-plugin": "^2.4.6",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
@@ -39,7 +42,8 @@
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.0",
     "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"

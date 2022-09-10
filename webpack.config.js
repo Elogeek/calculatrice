@@ -47,7 +47,7 @@ function devConfig() {
                 },
                 /* Règles fichiers images
                 {
-                    test: /\.(png|jpe?g|gif|webp)$/i,
+                    test.spec.ts: /\.(png|jpe?g|gif|webp)$/i,
                     type: 'assets/resource',
                     generator: {filename: 'build/images/[name][ext]'}
                 },*/
@@ -90,7 +90,7 @@ function prodConfig() {
 
                 /* Règles fichiers images
                 {
-                    test: /\.(png|jpe?g|gif|webp)$/i,
+                    test.spec.ts: /\.(png|jpe?g|gif|webp)$/i,
                     type: 'asset/resource',
                     generator: {filename: 'build/images/[name][ext]'}
                 }, */
