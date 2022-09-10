@@ -100,12 +100,11 @@ function prodConfig() {
                     exclude: /node_modules/,
                 },
                 {
-                    test: /\.(m)js$/,
+                    test: /\.js$/,
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
                         plugins: ['@babel/plugin-proposal-object-rest-spread'],
-                        exclude: ['/assets/specs']
                     }
                 },
 
